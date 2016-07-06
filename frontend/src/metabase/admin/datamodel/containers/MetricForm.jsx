@@ -80,7 +80,7 @@ export default class MetricForm extends Component {
                             }}
                             tableMetadata={{
                                 ...tableMetadata,
-                                aggregation_options: tableMetadata.aggregation_options.filter(a => a.short !== "rows"),
+                                aggregation_options: tableMetadata.table.aggregation_options.filter(a => a.short !== "rows"),
                                 metrics: null
                             }}
                             previewSummary={previewSummary == null ? "" : "Result: " + formatValue(previewSummary)}
