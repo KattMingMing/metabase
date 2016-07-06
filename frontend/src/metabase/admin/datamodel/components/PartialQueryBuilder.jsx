@@ -44,10 +44,10 @@ export default class PartialQueryBuilder extends Component {
 
         let dataset_query = {
             type: "query",
-            database: tableMetadata.db_id,
+            database: tableMetadata.table.db_id,
             query: {
                 ...value,
-                source_table: tableMetadata.id
+                source_table: tableMetadata.table.id
             }
         };
 
@@ -69,7 +69,7 @@ export default class PartialQueryBuilder extends Component {
                 <GuiQueryEditor
                     query={dataset_query}
                     features={features}
-                    tableMetadata={tableMetadata}
+                    tableMetadata={tableMetadata.table}
                     setQueryFn={this.setQuery}
                     isShowingDataReference={false}
                     setDatabaseFn={null}
